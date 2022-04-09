@@ -1,5 +1,11 @@
 let landimg = document.querySelector('.landimg img')
 let img = document.querySelectorAll('.imgopt img')
+
+var m = document.createElement('meta');
+m.name = 'theme-color';
+m.content = '#4a4a4a';
+document.head.appendChild(m);
+
 img.forEach(e => {
   e.addEventListener('click', e => {
     let src = e.target.src
@@ -10,7 +16,7 @@ img.forEach(e => {
       e.classList.remove('active')
     })
     e.target.classList.add('active')
-    console.log(e.target.classList)
+    m.content = e.target.dataset.color;
 
 
   })
